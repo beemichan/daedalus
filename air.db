@@ -1,0 +1,35 @@
+record(stringin,"AIR:info"){
+    field (DESC, "Get information about air quality sensor")
+	field(DTYP,"stream")
+	field(INP,"@air.proto info test2_ino")
+    field(PINI, "YES")
+}
+
+record(stringin,"AIR:co2"){
+    field (DESC, "Get carbon dioxide measurement")
+	field(DTYP,"stream")
+    field(SCAN,"I/O Intr")
+	field(INP,"@air.proto getCO2 test2_ino")
+    field(PINI, "YES")
+}
+
+record(stringin,"AIR:temp"){
+    field (DESC, "Get temperature measurement")
+	field(DTYP,"stream")
+    field(SCAN,"I/O Intr")
+	field(INP,"@air.proto getTemp test2_ino")
+    field(PINI, "YES")
+}
+
+record(stringin,"AIR:humi"){
+    field (DESC, "Get humidity measurement")
+	field(DTYP,"stream")
+    field(SCAN,"I/O Intr")
+	field(INP,"@air.proto getHumi test2_ino")
+    field(PINI, "YES")
+}
+
+record(stringin,"AIR:debug"){
+	field(DTYP,"stream")
+	field(INP,"@air.proto debug test2_ino")
+}

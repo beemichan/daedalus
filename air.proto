@@ -3,16 +3,29 @@
 
 Terminator = CR LF;
 
+# this method is used to retrieve the information for a specific sensor module
 info {
 	ExtraInput = Ignore;
-	out "*IDN?";
+	out "ID?";
 	in "%39c";
 }
 
-# Data is returned as a string, so that it is bundled with its trigger count
-data {
-	ExtraInput = Ignore;
-	in "STREAM %39c";
+# retrieving co2 data
+getCO2 {
+	out "Co2";
+	in "%u";
+}
+
+# retrieving temperature data
+getTemp {
+	out "Temp";
+	in "%f";
+}
+
+#retrieving humidity data
+getHumi {
+	out "Humi";
+	in "%f";
 }
 
 debug {

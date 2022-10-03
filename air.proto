@@ -1,0 +1,22 @@
+# Daedalus Air Quality Sensor protocol sensor file
+# Built by modeling the Sidekick EPICS files
+
+Terminator = CR LF;
+
+info {
+	ExtraInput = Ignore;
+	out "*IDN?";
+	in "%39c";
+}
+
+# Data is returned as a string, so that it is bundled with its trigger count
+data {
+	ExtraInput = Ignore;
+	in "STREAM %39c";
+}
+
+debug {
+   ExtraInput = Ignore;
+   out "%s";
+   in "%39c";
+}

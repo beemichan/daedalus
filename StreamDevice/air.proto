@@ -13,7 +13,7 @@ info {
 # retrieving co2 data
 getCO2 {
 	out "Co2";
-	in "%u";
+	in "%f";
 }
 
 # retrieving temperature data

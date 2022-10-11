@@ -5,13 +5,13 @@ streamApp_registerRecordDeviceDriver
 
 epicsEnvSet "STREAM_PROTOCOL_PATH","."
 
-drvAsynSerialPortConfigure("AirSCPI.ino","/dev/ttyUSB0")
-asynSetOption("AirSCPI",0,"baud","9600")
-asynSetOption("AirSCPI",0,"bits","8")
-asynSetOption("AirSCPI",0,"parity","none")
-asynSetOption("AirSCPI",0,"stop","1")
-asynSetOption("AirSCPI",0,"clocal","Y")
-asynSetOption("AirSCPI",0,"crtscts","N")
+drvAsynSerialPortConfigure("AirSCPI_ino","/dev/ttyUSB0")
+asynSetOption("AirSCPI_ino",0,"baud","9600")
+asynSetOption("AirSCPI_ino",0,"bits","8")
+asynSetOption("AirSCPI_ino",0,"parity","none")
+asynSetOption("AirSCPI_ino",0,"stop","1")
+asynSetOption("AirSCPI_ino",0,"clocal","Y")
+asynSetOption("AirSCPI_ino",0,"crtscts","N")
 
 #drvAsynIPPortConfigure "LO","localhost:40000"
 #vxi11Configure "LO","192.168.1.236",0,0.0,"gpin0"

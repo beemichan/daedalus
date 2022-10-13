@@ -21,9 +21,24 @@ void setup(){
   my_inst.RegisterCommand(F("Temp"), &getTemp);
   my_inst.RegisterCommand(F("Humi"), &getHumi);
 
+  char errorMessage[100];
+
   Serial.begin(9600);
   Wire.begin();
   scd4x.begin(Wire);
+  
+  //check
+  error = scd4x.stopPeriodicMeasurement();
+  if (error) {
+    errorToString(error, errorMessage, 100);
+    Serial.println(errorMessage);
+  }
+  //check
+  error = scd4x.startPeriodicMeasurement();
+  if (error){
+    errorToString(error, errorMessage, 100);
+    Serial.println(errorMessage);
+  }
   Serial.println("Waiting for first measurement...");
 }
 
@@ -33,7 +48,7 @@ void loop(){
 }
 
 void identify (SCPI_C commands, SCPI_P parameters, Stream& interface) {
-  interface.println(F("Daedalus Air Quality Sensor."));
+  interface.println(F("Daedalus Air Quality Sensor. V1.10.13.2022"));
 }
 
 void getCO2 (SCPI_C commands, SCPI_P parameters, Stream& interface) {

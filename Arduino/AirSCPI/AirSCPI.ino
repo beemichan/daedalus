@@ -39,7 +39,8 @@ void setup(){
     errorToString(error, errorMessage, 100);
     Serial.println(errorMessage);
   }
-  Serial.println("Waiting for first measurement...");
+  Serial.println("Waiting for first measurement...(5 sec)");
+  delay(5000);
 }
 
 void loop(){

@@ -8,7 +8,7 @@ record(stringin,"AIR:info"){
 record(ai,"AIR:co2"){
     field (DESC, "Get carbon dioxide measurement")
 	field(DTYP,"stream")
-    field(SCAN,"I/O Intr")
+    field(SCAN,"1 second")
 	field(INP,"@air.proto getCO2 AirSCPI_ino")
     field(PINI, "YES")
 }
@@ -16,7 +16,7 @@ record(ai,"AIR:co2"){
 record(ai,"AIR:temp"){
     field (DESC, "Get temperature measurement")
 	field(DTYP,"stream")
-    field(SCAN,"I/O Intr")
+    field(SCAN,"1 second")
 	field(INP,"@air.proto getTemp AirSCPI_ino")
     field(PINI, "YES")
 }
@@ -24,7 +24,7 @@ record(ai,"AIR:temp"){
 record(ai,"AIR:humi"){
     field (DESC, "Get humidity measurement")
 	field(DTYP,"stream")
-    field(SCAN,"I/O Intr")
+    field(SCAN,"1 second")
 	field(INP,"@air.proto getHumi AirSCPI_ino")
     field(PINI, "YES")
 }

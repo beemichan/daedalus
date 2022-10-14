@@ -13,19 +13,19 @@ info {
 # retrieving co2 data
 getCO2 {
 	out "Co2";
-	in "%f";
+	in "CO2: %f";
 }
 
 # retrieving temperature data
 getTemp {
 	out "Temp";
-	in "%f";
+	in "TEMP: %f";
 }
 
 #retrieving humidity data
 getHumi {
 	out "Humi";
-	in "%f";
+	in "HUMI: %f";
 }
 
 debug {
